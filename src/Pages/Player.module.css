@@ -1,0 +1,245 @@
+.container{
+    background-color: #343434;
+    margin-top: 0;
+    padding: 0;
+    padding: .5em 2em;
+    min-height: 82vh;
+}
+.container h1{
+    margin: 0;
+    color: #fefefe;
+    padding: 1em 0;
+    font-size: 1.8em;
+}
+
+.ficha{
+    background-color: #ccc5b9;
+    border-radius: 20px 20px 5px 5px;
+    padding-bottom: 1.5em;
+}
+
+.imageplayer{
+    margin: 0;
+    padding: 0;
+}
+
+.imageplayer img{
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+}
+.player_name{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: underline;
+    text-align: center;
+}
+.info_player{
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    letter-spacing: -1px;
+    margin: .5em 1em;
+}
+.info_player span{
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.history{
+    margin: .2em 1em;
+}
+.history p span{
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.history_area{
+    background-color: #afaba4;
+    padding: 3px 8px;
+    border-radius: 5px;
+    margin-top: 0;
+}
+.hability_area div .title{
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 0;
+}
+.life_container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.life{
+    font-weight: bold;
+    font-style: italic;
+}
+.btn_life{
+    width: 48px;
+    padding: 10px 16px;
+    background-color: #403d39;
+    color: #fefefe;
+    border: none;
+    border-radius: 5px;
+    transition: all .3s ease;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+
+.habilidade{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    margin: .2em 1em;
+}
+.habilidade p{
+    padding: .2em .5em;
+    background-color: #afaba4;
+    flex: 1;
+    border-radius: 5px;
+    margin: .3em .5em;
+}
+.habilidade p span{
+    font-weight: bold;
+    font-style: italic;
+}
+.habilidade div{
+    display: flex;
+    gap: 5px;
+    justify-content: space-around;
+    align-items: center;
+}
+.btn_hab{
+    width: 30px;
+    padding: .3em;
+    font-weight: bold;
+    background-color: #afaba4;
+    border: none;
+    border-radius: 5px;
+}
+.buttons_area{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+}
+
+.btn_play{
+    padding: .7em 2em;
+    text-align: center;
+    background-color: #c81212;
+    text-decoration: none;
+    color: #fefefe;
+    font-weight: bold;
+    margin: auto;
+    border: none;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.btn_play:hover{
+    background-color: #961010;
+}
+
+
+
+/*inventario*/
+
+.ocult{
+    display:none;
+}
+
+.inventory{
+    position: fixed;
+    max-width: 280px;
+    background-color: #ccc5b9;
+    padding: 1em 1.5em;
+    border-radius: 5px;
+    margin-top: 10px;
+    left: 1em;
+    top: 4.5em;
+    box-shadow: 0 0 10px 1000px #0000005f;
+}
+.inventory div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.inventory form{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
+}
+.inventory form input[type= text]{
+    flex: 1;
+    border: none;
+    background-color: #afaba4;
+    padding: .5em 1em;
+    border-radius: 5px;
+}
+.inventory form input[type= submit]{
+    margin: 0;
+    padding: .5em 1em;
+    background-color: #403d39;
+}
+.inventory ul{
+    list-style: none;
+    padding: 0;
+}
+.inventory ul li{
+    background-color: #afaba4;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+    align-items: center;
+    font-weight: bold;
+    padding-left: .5em;
+    margin-top: .5em;
+}
+.inventory ul li button{
+    margin: .5em;
+    
+}
+.btn_list{
+    background-color: #403d39;
+    border: none;
+    padding: .3em 1em;
+    font-weight: bold;
+    color: #fefefe;
+    border-radius: 5px;
+}
+
+@media screen and (min-width: 501px){
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        text-align: center;
+    }
+    .ficha{
+        width: 500px;
+        text-align: left;
+        float: left;
+    }
+    .imageplayer{
+        max-width: 50%;
+        float: left;
+        margin-right: 1em;
+    }
+    .imageplayer img{
+        border-radius: 10px;
+    }
+    .history{
+        float: right;
+    }
+    .inventory{
+        position: initial;
+        display: block;
+        box-shadow: none;
+        width: 500px;
+    }
+}

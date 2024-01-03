@@ -1,0 +1,104 @@
+.container{
+    background-color: #343434;
+    color: #fefefe;
+}
+.banner{
+    background-image: url(https://img.freepik.com/vetores-gratis/cena-do-crime-a-noite-local-do-assassinato-no-quarto-escuro_33099-2442.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 30vh;
+    color: #fefefe;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.3em 1.5em;
+}
+.logo{
+    color: #fefefe;
+    text-align: center;
+    margin: 0;
+}
+.logo span{
+    color: #c81212;
+}
+
+.info{
+    padding: 1.5em 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.info h3{
+    text-transform: uppercase;
+    text-decoration: underline;
+    letter-spacing: 2px;
+    text-align: center;
+}
+.info div{
+    padding: .5em 1em;
+    background-color: #ccc5b9;
+    color: #000;
+}
+.hero{
+    padding: 1em 1.5em;
+    background-color: #fefefe;
+    color: #000;
+    margin: 1em 1.5em;
+    border-radius: 5px;
+}
+.rules{
+    padding: .5em 1em;
+}
+.rules h2{
+    text-transform: uppercase;
+}
+.rules div{
+    background-color: #fffcf2;
+    color: #000;
+    padding: .5em 1em;
+    margin-bottom: 1em;
+    border-radius: 8px;
+}
+.rules div h4{
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+.rules div p span{
+    font-weight: bold;
+    font-style: italic;
+}
+
+@media screen and (min-width: 500px){
+    .banner{
+        height: 80vh;
+    }
+    .banner small{
+        font-size: 1.5em;
+    }
+    .logo{
+        font-size: 3.5em;
+    }
+    .info{
+        flex-direction: row;
+    }
+    .info div{
+        width: 50%;
+    }
+    .rules{
+        display: flex;
+    }
+    .rules div{
+        width: 50%;
+        border-radius: 0;
+    }
+    .rules div:nth-child(1){
+        background-image: linear-gradient(90deg, #cac7de, #b4da63);
+        border-radius: 5px 0 0 5px;
+    }
+    .rules div:nth-child(2){
+        background-image: linear-gradient(90deg,#b4da63, #78e28f);
+        border-radius: 0 5px 5px 0;
+        
+    }
+}
