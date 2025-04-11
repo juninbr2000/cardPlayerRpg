@@ -26,6 +26,7 @@
 .link_list{
     display: flex;
     list-style: none;
+    align-items: center;
 }
 .link_list li {
     margin-right: 1em;
@@ -35,6 +36,16 @@
     transition: all .3s ease;
     text-decoration: none;
     color: #fefefe;
+}
+.link_list li button{
+    padding: .4em .6em;
+    transition: all .3s ease;
+    text-decoration: none;
+    color: #fefefe;
+    border: none;
+    font-size: 16px;
+    background-color: transparent;
+    cursor: pointer;
 }
 
 .active{
