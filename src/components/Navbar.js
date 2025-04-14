@@ -30,7 +30,7 @@ const Navbar = () => {
                         <NavLink to="/Create" className={({isActive}) => (isActive ? styles.active : "")}>Criar</NavLink>
                     </li>
                     <li>
-                        <button onClick={logout} className={({isActive}) => (isActive ? styles.active : "")}>Sair</button>
+                        <button onClick={logout}>Sair</button>
                     </li>
                     </>
                 )}

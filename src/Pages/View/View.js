@@ -1,22 +1,22 @@
 import React, { useState } from 'react'
 import styles from "./View.module.css"
 import { Link } from 'react-router-dom'
+import { useAuthValue } from '../../context/AuthContext'
 
 const View = () => {
-  let player = []
-  const object = localStorage.playerInfo
 
-  if(object){
-    player = JSON.parse(object)
-    
-  } else {
-    console.log("nao tem dados")
-  }
+  const { user } = useAuthValue()
+  console.log(user)
+  
+  const [player, setPlayer] = useState([])
+
+  
 
 
   return (
     <div className={styles.visual}>
-      <h1>Visualização de presonagens</h1>
+      <h1>Olá! {user.displayName}</h1>
+      <h2>Visualização de presonagens</h2>
 
       <div className={styles.list}>
         {!player.length ? (
