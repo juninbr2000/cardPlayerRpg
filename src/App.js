@@ -50,7 +50,7 @@ function App() {
             <Routes>
               <Route path='/' element={<Home />}/>
               <Route path='/Create' element={user ? <Create/> : <Login />}/>
-              <Route path='/View' element={<View/>}/>
+              <Route path='/View' element={user ? <View/> : <Login />}/>
               <Route path='/player/:id' element={<Player/>}/>
               <Route path='/login' element={!user ? <Login/> : <View /> }/>
               <Route path='/register' element={!user? <Register/>: <View />}/>

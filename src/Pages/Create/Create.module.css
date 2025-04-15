@@ -1,97 +1,79 @@
-.create{
-    padding: 1em 2em 3em;
-    background-color: #343434;
-    color: #fefefe;
-}
-.P_form{
-    padding: 2em 1.5em;
-    background-color: #ccc5b9;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    color: #000;
-}
-.P_form h4{
-    margin: 0;
-    padding: .3em 0; 
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-align: center;
-}
-
-.P_form label input , .P_form textarea{
-    border: none;
-    background-color: #afaba4;
-    padding: .5em .8em;
-    margin: .5em;
-    border-bottom: 1px solid #000;
-    max-width: 90%;
-}
-.P_form div{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: .7em 0;
-}
-.P_form div label{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-}
-.P_form div label input[type=number]{
-    width: 40px;
-}
-
-.btn_form{
-    padding: .8em;
+.create {
+    background-color: #121212;
+    color: #e0e0e0;
+    padding: 2rem;
+    max-width: 800px;
+    
+    font-family: 'Courier New', Courier, monospace;
+  }
+  .create form{
+    padding: 20px 25px;
+    margin: 1rem 20px;
+    background-color: rgb(198, 188, 174);
+    box-sizing: border-box;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.1);
+  }
+  
+  .create h2,
+  .create h3 {
+    color: #ff0000;
+    border-bottom: 1px solid #ff0000;
+    padding-bottom: 0.3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .create input[type="text"],
+  .create input[type="number"],
+  .create textarea,
+  .create input[type="file"] {
+    background-color: #1f1f1f;
+    color: #f5f5f5;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 0.5rem;
+    width: 100%;
+    margin-bottom: 1rem;
+    transition: border 0.3s;
+    box-sizing: border-box;
+    resize: none;
+  }
+  
+  .create input[type="text"]:focus,
+  .create input[type="number"]:focus,
+  .create textarea:focus {
+    border-color: #ff0000;
+    outline: none;
+  }
+  
+  .create label {
+    display: block;
+    margin-bottom: 0.2rem;
     font-weight: bold;
-    background-color: #403d39;
-    margin-top: 1em;
+    color: #ff0000;
+  }
+  
+  .create button {
+    background-color: #ff0000;
     color: #fefefe;
     border: none;
-    border-radius: 5px;
-    transition: all .5s ease;
-}
-.btn_form:hover{
-    scale: 1.03;
-    box-shadow: 1px 2px 4px #555;
-    background-color: #4d4843;
-}
-.btn_form:active{
-    scale: 0.97;
-    box-shadow: inset 1px 2px 4px #000;
-    background-color: #2e2c2a;
-}
-.successMessage{
-    text-align: center;
+    border-radius: 8px;
+    padding: 0.7rem 1.5rem;
     font-weight: bold;
-    color: #000;
-}
-.alert{
-    position: fixed;
-    top: 15em;
-    left: 2em;
-    background-color: #ccc5b9;
-    padding: .5em 1.5em;
-    border-radius: 5px;
-    box-shadow: 3px 5px 5px 1000px #00000068;
-}
-
-@media screen and (max-width: 500px) {
-    .P_form div{
-        flex-direction: column;
-        align-items: flex-start;
-    }
-}
-@media screen and (min-width: 501px){
-    .P_form{
-        max-width: 550px;
-    }
-    .create{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
-    }
-}
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .create button:hover {
+    background-color: #a70000;
+  }
+  
+  .create p {
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+  
+  .create textarea {
+    resize: vertical;
+    min-height: 80px;
+  }
+  
