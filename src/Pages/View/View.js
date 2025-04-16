@@ -12,7 +12,7 @@ const View = () => {
   
   const [player, setPlayer] = useState({})
 
-  const { documents, loading} = useFetchDocuments('player', null, uid)
+  const { documents, loading } = useFetchDocuments('player', null, uid)
   console.log(documents)
 
   useEffect(() => {
@@ -24,34 +24,27 @@ const View = () => {
 
   return (
     <div className={styles.visual}>
-      <div>
-        <h1>Olá! {user.displayName}</h1>
-        <h2>Visualização de presonagens</h2>
+      <div className={styles.complement}>
+        <h1>Olá {user.displayName}!</h1>
+        <h2>Lista de personagens</h2>
       </div>
+      {player.length > 0 ? player.map((play) => (
+        <div className={styles.ficha}>
+          <h3>{play.name}</h3>
+          <div>
+            <p><span>Profissão:</span> {play.profic}</p>
+            <p><span>Defesa:</span> {play.defence}</p>
+            <p><span>Vida:</span> {play.life}</p>
+          </div>
+          <Link to={`/player/${play.id}`} className={styles.btn}>Selecionar</Link>
+        </div>
+      )) : (
+        <div>
+          <h3>Você ainda não criou nenhum perosnagem</h3>
 
-      <div className={styles.list}>
-        {!player.length ? (
-          <>
-            <p className={styles.error}>Você ainda nao criou nehum personagem</p>
-            <Link to="/Create" className={styles.btn}>Criar</Link>
-          </>
-        ) : (
-        <ul>
-          {player.map((play) => (
-            <li className={styles.player} key={play.id}>
-              <h4>{play.name}</h4>
-              <div>
-                <p><span>Defesa: </span>{play.defence}</p>
-                <p><span>Vida: </span>{play.life}</p>
-                <p><span>Profissão: </span>{play.profic}</p>
-              </div>
-                <Link to={`/player/${play.id}`} className={styles.btn}>Selecinar</Link>
-            </li>
-          ))}
-        </ul>
-        )}
-      </div>
-
+          <Link to={'/create'}>Criar Personagem</Link>
+        </div>
+      )}
     </div>
   )
 }
