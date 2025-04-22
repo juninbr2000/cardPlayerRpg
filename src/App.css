@@ -20,3 +20,49 @@
     border: none;
     margin-bottom: 10px;
 }
+
+.dice_modal{
+    background-color: #fefefe;
+    width: 80%;
+    max-width: 450px;
+    border-radius: 20px;
+    padding: 20px;
+    color: #000;
+}
+
+.dice_modal div h1{
+    color: #000;
+}
+.container_modal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.modal_button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+.notes_modal{
+    background-color: #fefefe;
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
+}
+.text_area{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-top: 1px solid #000;
+    width: 100%;
+}
+.text_area textarea{
+    resize: none;
+    font-size: 16px;
+    width: 80%;
+    padding: 5px;
+    border-radius: 10px;
+}

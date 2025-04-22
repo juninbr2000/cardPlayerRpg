@@ -4,19 +4,24 @@ import styles from "./Player.module.css"
 import { useFetchDocument } from '../../hooks/useFecthDocument'
 import { useAuthValue } from '../../context/AuthContext'
 import Dice from '../../components/Dice'
+import UserLogs from '../../components/UserLogs'
 
 
 const Player = () => {
 
   const [charac, setCharac] = useState({})
+  const [showDice, setShowDice] = useState(false)
+  const [showNotes, setShowNotes] = useState(false)
 
   const { id } = useParams()
-  const { document, loading, error} = useFetchDocument('player', id)
+  const { document: data, loading, error} = useFetchDocument('player', id)
   const { user } = useAuthValue()
 
   useEffect(() => {
-    setCharac(document)
-  }, [document])
+    if(data){
+      setCharac({...data, id})
+    }
+  }, [data, id])
 
   if(loading){
     return (
@@ -66,13 +71,29 @@ const Player = () => {
       </div>
       )}
 
+      {charac && user && charac.createBy === user.uid && (
       <div className={styles.button_container}>
-        <button className='primary'>Dado</button>
+        <button className='primary' onClick={() => setShowDice(true)}>Dado</button>
         <button className='primary'>Inventario</button>
-        <button className='primary'>Anotações</button>
+        <button className='primary' onClick={() => setShowNotes(true)}>Anotações</button>
       </div>
+      )}
 
-      <Dice />
+      {showDice === true && (
+        <div className={styles.modal} onClick={() => setShowDice(false)}>
+          <div onClick={(e) => e.stopPropagation()} className='container_modal'>
+            <Dice />
+          </div>
+        </div>
+      )}
+      
+      {showNotes === true && (
+        <div className={styles.modal} onClick={() => setShowNotes(false)}>
+          <div onClick={(e) => e.stopPropagation()} className='container_modal'>
+            <UserLogs user={user} charac={charac} setCharac={setCharac} />
+          </div>
+        </div>
+      )}
     </div>
   )
 }

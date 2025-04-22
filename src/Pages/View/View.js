@@ -29,7 +29,7 @@ const View = () => {
         <h2>Lista de personagens</h2>
       </div>
       {player.length > 0 ? player.map((play) => (
-        <div className={styles.ficha}>
+        <div className={styles.ficha} key={play.id}>
           <h3>{play.name}</h3>
           <div>
             <p><span>Profissão:</span> {play.profic}</p>
