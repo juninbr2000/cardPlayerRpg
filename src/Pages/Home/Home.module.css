@@ -6,13 +6,13 @@
     background-image: url('../../assets/dark_Florest.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    height: 30vh;
+    height: 40vh;
     color: #fefefe;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 1.3em 1.5em;
+    padding: 2.5em 1.5em;
 }
 .logo{
     color: #fefefe;
@@ -22,52 +22,44 @@
 .logo span{
     color: #c81212;
 }
-
-.info{
-    padding: 1.5em 1em;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.actions{
+    margin-top: 5em;
 }
-.info h3{
-    text-transform: uppercase;
-    text-decoration: underline;
-    letter-spacing: 2px;
+
+.hero{
+    background-color: #fefefe;
+    color: #000000;
+    padding: 30px 20px;
+    width: 80%;
+    margin: auto;
+    border-radius: 10px;
+    transform: translateY(-40px);
+    box-shadow: 2px 1px 5px #00000050;
+}
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 2rem;
+}
+
+.main{
+    flex-grow: 1;
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+}
+
+.feature {
+    max-width: 300px;
+    background-color: #222222;
+    padding: 15px 20px;
+    border-radius: 5px;
+    margin-bottom: 10px;
     text-align: center;
 }
-.info div{
-    padding: .5em 1em;
-    background-color: #ccc5b9;
-    color: #000;
-}
-.hero{
-    padding: 1em 1.5em;
-    background-color: #fefefe;
-    color: #000;
-    margin: 1em 1.5em;
-    border-radius: 5px;
-}
-.rules{
-    padding: .5em 1em;
-}
-.rules h2{
-    text-transform: uppercase;
-}
-.rules div{
-    background-color: #fffcf2;
-    color: #000;
-    padding: .5em 1em;
-    margin-bottom: 1em;
-    border-radius: 8px;
-}
-.rules div h4{
-    text-transform: uppercase;
-    text-decoration: underline;
-}
-.rules div p span{
-    font-weight: bold;
-    font-style: italic;
-}
+
 
 @media screen and (min-width: 500px){
     .banner{
@@ -79,26 +71,12 @@
     .logo{
         font-size: 3.5em;
     }
-    .info{
-        flex-direction: row;
+    .hero{
+        padding: 40px 30px;
+        max-width: 1170px;
     }
-    .info div{
-        width: 50%;
-    }
-    .rules{
-        display: flex;
-    }
-    .rules div{
-        width: 50%;
-        border-radius: 0;
-    }
-    .rules div:nth-child(1){
-        background-image: linear-gradient(90deg, #cac7de, #b4da63);
-        border-radius: 5px 0 0 5px;
-    }
-    .rules div:nth-child(2){
-        background-image: linear-gradient(90deg,#b4da63, #78e28f);
-        border-radius: 0 5px 5px 0;
-        
-    }
+   .features{
+        max-width: 1170px;
+        margin: auto;
+   }
 }
