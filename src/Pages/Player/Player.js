@@ -3,8 +3,11 @@ import { redirect, useParams } from "react-router-dom"
 import styles from "./Player.module.css"
 import { useFetchDocument } from '../../hooks/useFecthDocument'
 import { useAuthValue } from '../../context/AuthContext'
+import { doc, updateDoc } from 'firebase/firestore'
+import { db } from '../../firebase/config'
 import Dice from '../../components/Dice'
 import UserLogs from '../../components/UserLogs'
+import Inventary from '../../components/Inventary'
 
 
 const Player = () => {
@@ -12,6 +15,7 @@ const Player = () => {
   const [charac, setCharac] = useState({})
   const [showDice, setShowDice] = useState(false)
   const [showNotes, setShowNotes] = useState(false)
+  const [showInventary, setshowInvetary] = useState(false)
 
   const { id } = useParams()
   const { document: data, loading, error} = useFetchDocument('player', id)
@@ -31,6 +35,28 @@ const Player = () => {
     )
   }
 
+  const updateLife = async (amount) => {
+    if (!charac.id) return
+  
+    const currentLife = charac.life || 0
+    const maxLife = charac.maxlife || 999 // fallback alto se ainda não tiver o campo
+  
+    const newLife = Math.max(0, Math.min(currentLife + amount, maxLife))
+  
+    const charRef = doc(db, "player", charac.id)
+  
+    try {
+      await updateDoc(charRef, {
+        life: newLife
+      })
+  
+      setCharac(prev => ({ ...prev, life: newLife }))
+    } catch (error) {
+      console.error("Erro ao atualizar vida:", error)
+    }
+  }
+  
+
   console.log(charac)
 
   return (
@@ -48,7 +74,11 @@ const Player = () => {
 
           <div className={styles.life_cont}>
             <p className={styles.info}>Defesa: <span>{charac.defence}</span></p>
-            <p className={styles.info}>Vida: <span>{charac.life}</span></p>
+            <p className={styles.info}>
+              Vida: <span>{charac.life} / {charac.maxlife}</span>
+              <button onClick={() => updateLife(-1)} className={styles.lifeBtn}>-</button>
+              <button onClick={() => updateLife(1)} className={styles.lifeBtn}>+</button>
+            </p>
           </div>
         </div>
         <hr />
@@ -74,7 +104,7 @@ const Player = () => {
       {charac && user && charac.createBy === user.uid && (
       <div className={styles.button_container}>
         <button className='primary' onClick={() => setShowDice(true)}>Dado</button>
-        <button className='primary'>Inventario</button>
+        <button className='primary' onClick={() => setshowInvetary(true)}>Inventario</button>
         <button className='primary' onClick={() => setShowNotes(true)}>Anotações</button>
       </div>
       )}
@@ -83,6 +113,14 @@ const Player = () => {
         <div className={styles.modal} onClick={() => setShowDice(false)}>
           <div onClick={(e) => e.stopPropagation()} className='container_modal'>
             <Dice />
+          </div>
+        </div>
+      )}
+
+      {showInventary === true && (
+        <div className={styles.modal} onClick={() => setshowInvetary(false)}>
+          <div onClick={(e) => e.stopPropagation()} className='container_modal'>
+            <Inventary charac={charac} setCharac={setCharac} />
           </div>
         </div>
       )}

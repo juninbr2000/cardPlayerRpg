@@ -13,7 +13,7 @@ const Navbar = () => {
   return (
     <nav className={styles.navbar}>
         <NavLink to="/" className={styles.logo}>
-            O Misterio de <span>Kielmore</span>
+            <span>Hero</span>Note
         </NavLink>
         <div>
             <ul className={styles.link_list}>

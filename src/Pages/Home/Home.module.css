@@ -3,7 +3,7 @@
     color: #fefefe;
 }
 .banner{
-    background-image: url(https://img.freepik.com/vetores-gratis/cena-do-crime-a-noite-local-do-assassinato-no-quarto-escuro_33099-2442.jpg);
+    background-image: url('../../assets/dark_Florest.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     height: 30vh;

@@ -132,6 +132,7 @@ const Create = () => {
       personality,
       description,
       life,
+      maxlife: life,
       defence,
       attributes,
       skills,

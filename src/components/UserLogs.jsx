@@ -39,7 +39,7 @@ const UserLogs = ({ user, charac, setCharac }) => {
           charac.logs.map((log, index) => (
             <div key={index} className="log_item">
               <p>{log.text}</p>
-              <small>{log.user} - {new Date(log.timestamp.seconds ? log.timestamp.seconds * 1000 : log.timestamp).toLocaleString()}</small>
+              <small className='details'>{log.user} - {new Date(log.timestamp.seconds ? log.timestamp.seconds * 1000 : log.timestamp).toLocaleString()}</small>
             </div>
           ))
         ) : (

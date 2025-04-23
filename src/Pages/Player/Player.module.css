@@ -43,6 +43,7 @@
 
 .life_cont{
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
 }
 
@@ -72,4 +73,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.lifeBtn{
+    background-color: red;
+    font-weight: bold;
+    border: none;
+    color: #fefefe;
+    font-size: 16px;
+    padding: 5px 15px;
+    margin-left: 5px;
+    border-radius: 5px;
 }
