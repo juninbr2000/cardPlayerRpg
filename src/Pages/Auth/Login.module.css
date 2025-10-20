@@ -1,0 +1,30 @@
+.container{
+    min-height: 100vh;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at 10% 20%, rgba(165, 105, 255, 0.35), transparent 60%),
+                radial-gradient(circle at 90% 70%, rgba(100, 150, 255, 0.35), transparent 60%),
+                linear-gradient(135deg, #ffffff 0%, #f4f3ff 100%);
+    box-sizing: border-box;
+}
+
+.form{
+    border: 1px solid var(--Primary);
+    border-radius: 20px;
+    padding: 40px 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+} 
+.form a{
+    text-align: center;
+    text-decoration: none;
+    color: var(--gray);
+    transition: all .3s ease;
+}
+.form a:hover{
+    color: var(--Primary);
+}

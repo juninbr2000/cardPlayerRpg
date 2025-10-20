@@ -1,0 +1,60 @@
+.mainHeader{
+    background: linear-gradient(0deg, var(--white), #efefef75),
+                url('../../assets/headerbg.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 30px;
+    text-align: center;
+}
+.tag{
+    background-color: #efefef90;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: 300;
+    margin-bottom: 80px;
+    & p{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        & svg{
+            color: var(--Primary);
+        }
+    }
+}
+.title{
+    font-size: 2.8em;
+    margin-bottom: 20px;
+    & span{
+        color: var(--Primary);
+    }
+}
+
+.subtitle{
+    font-weight: 400;
+    color: var(--gray);
+    font-size: 1.4em;
+}
+
+.buttonContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 80px;
+}
+
+
+.section{
+    background-color: #F8F4FF;
+    padding: 80px 30px;
+    text-align: center;
+    box-shadow: 0 0 20px #00000010;
+}
+
+.section .title{
+    font-size: 1.8em;
+}
