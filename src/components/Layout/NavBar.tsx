@@ -1,8 +1,17 @@
 import React from 'react'
+import { useAuth } from '../../context/AuthContext'
 
 function NavBar() {
+
+  const {user} = useAuth()
   return (
-    <div></div>
+    <nav>
+      {user ? (
+        <div>
+          
+        </div>
+      ): ()}
+    </nav>
   )
 }
 

@@ -1,0 +1,78 @@
+.container{
+    min-height: 100vh;
+    background: radial-gradient(circle at 10% 20%, rgba(165, 105, 255, 0.35), transparent 60%),
+                radial-gradient(circle at 90% 70%, rgba(100, 150, 255, 0.35), transparent 60%),
+                linear-gradient(135deg, #ffffff 0%, #f4f3ff 100%);
+    box-sizing: border-box;
+    padding: 10px 20px;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.header svg{
+    color: var(--Primary);
+    text-align: center;
+    font-size: 6em;
+}
+
+.form{
+    background-color: #fff;
+    padding: 30px 20px;
+    border-radius: 20px;
+    margin-top: 50px;
+    box-shadow: 0 0 15px #00000025;
+    margin-bottom: 50px;
+}
+.title{
+    font-size: 1.8em;
+    text-align: center;
+}
+.subtitle{
+    font-size: 1em;
+    font-weight: 400;
+    text-align: center;
+    color: var(--gray);
+    margin-bottom: 25px;
+}
+
+.label{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.label span{
+    font-weight: 600;
+}
+.label textarea{
+    height: 100px;
+    resize: none;
+}
+
+.label select, .label textarea{
+    border: 1px solid var(--Primary);
+    padding: 12px 10px;
+    border-radius: 10px;
+    font-size: 1em;
+    background-color: #ffffff70;
+    backdrop-filter: blur(10px);
+    transition: all .3s ease;
+}
+
+.label select:focus, .label textarea:focus{
+    outline: 2px solid var(--Primary);
+    outline-offset: 2px;
+    background-color: #ffffff;
+}
+
+.buttonContainer{
+    display: flex;
+    flex: 1;
+    margin-top: 30px;
+    gap: 20px;
+    justify-content: space-between;
+}

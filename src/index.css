@@ -19,8 +19,9 @@
 
 
 
+
 .button{
-  padding: 12px 35px;
+  padding: 10px 15px;
   font-size: 1em;
   display: flex;
   align-items: center;
@@ -100,4 +101,13 @@
   bottom: -22px;
   color: #e63946;
   font-weight: 600;
+}
+
+
+
+@media screen and (min-width: 580px) {
+  .button{
+    padding: 12px 35px;
+    gap: 10px;
+  } 
 }

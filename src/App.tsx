@@ -5,6 +5,7 @@ import Login from './Pages/Auth/Login'
 import Register from './Pages/Auth/Register'
 import { useAuth } from './context/AuthContext'
 import Dashboard from './Pages/Dashboard/Dashboard'
+import CreateCampain from './Pages/Create/CreateCampain'
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
           <Route path='/login' element={!user ? <Login />: <Dashboard />} />
           <Route path='/register' element={!user ? <Register />: <Dashboard />} />
           <Route path='/dashboard' element={user ? <Dashboard />: <Login />} />
+          <Route path='/create/campaign' element={user ? <CreateCampain />: <Login />} />
         </Routes>
       </BrowserRouter>
     </>
