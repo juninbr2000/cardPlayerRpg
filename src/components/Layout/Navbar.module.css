@@ -1,0 +1,48 @@
+.container{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px 15px;
+    background-color: #fefefe;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 0 15px #00000025;
+}
+
+.user{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    & svg{
+        font-size: 30px;
+        color: var(--Primary);
+    }
+}
+.picture{
+    width: 35px;
+    border-radius: 50%;
+    border: 2px solid var(--Primary);
+}
+
+.name{
+    font-weight: 600;
+}
+
+.buttonContainer{
+    display: flex;
+    gap: 20px;
+}
+
+.notify{
+    padding: 8px 20px;
+    font-size: 22px;
+    background-color: transparent;
+    color: var(--Primary);
+    border-radius: 5px;
+    transition: all .3s ease;
+}
+.notify:hover{
+    background-color: #f5eafd;
+}

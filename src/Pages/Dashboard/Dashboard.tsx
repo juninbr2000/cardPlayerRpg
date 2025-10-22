@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useEffect, useState } from 'react'
 import styles from './Dashboard.module.css'
 import { useAuth } from '../../context/AuthContext'
 import Button from '../../components/Utils/Button'
@@ -6,15 +6,30 @@ import { FaPlus } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom'
 import { LuSword } from 'react-icons/lu'
 import { RiFilePaperLine } from 'react-icons/ri'
+import { type campaignCreate } from '../../types/campaign'
+import { useFetchCollection } from '../../Hooks/useFetchCollection'
+import CampaignCard from '../../components/Utils/CampaignCard'
+import NavBar from '../../components/Layout/NavBar'
 
 function Dashboard() {
     const [players, setPlayers] = useState([])
+    const [campaign, setCampaign] = useState<campaignCreate[]>([])
     const { user } = useAuth()
     const navigate = useNavigate()
 
+    const {documents, loading, error} = useFetchCollection<campaignCreate>('campaign', 'id', user?.uid)
+
+    useEffect(() => {
+        if(documents){
+            console.log(documents)
+            setCampaign(documents)
+        }
+    }, [documents])
+
   return (
     <div className={styles.container}>
-        <h1>Olá, {user?.displayName}</h1>
+        <NavBar />
+        <h1 className='subtitle'>Olá, {user?.displayName}!</h1>
 
         <div className={styles.actionContainer}>
             <div className={styles.containerHeader}>
@@ -44,9 +59,11 @@ function Dashboard() {
                 </div>
                 <Button title='Criar Campanha' icon={<FaPlus />} variant='primary' action={() => navigate('/create/campaign')} type='button' />
             </div>
-            {players && players.length > 0 ? (
+            {campaign && campaign.length > 0 ? (
                 <div>
-
+                    {campaign && campaign.map((camp: campaignCreate) => (
+                        <CampaignCard campaign={camp} />
+                    ))}
                 </div>
             ) : (
                 <div className={styles.empty}>

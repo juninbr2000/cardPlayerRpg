@@ -8,9 +8,11 @@ import { useNavigate } from 'react-router-dom'
 import { useFetchCollection } from '../../Hooks/useFetchCollection'
 import { type RPGSystem } from '../../types/rules'
 import { useInsertDocument } from '../../Hooks/useCreateDocument'
+import { type campaignCreate } from '../../types/campaign'
+import { useAuth } from '../../context/AuthContext'
 
 function CreateCampain() {
-
+    const {user} = useAuth()
     const navigate = useNavigate()
     const [campaignName, setCampaignName] = useState('')
     const [description, setDescription] = useState('')
@@ -20,7 +22,7 @@ function CreateCampain() {
     const [errors, setErrors] = useState('')
 
     const {documents, loading, error} = useFetchCollection<RPGSystem>('rules')
-    const {insertDocument} = useInsertDocument('campaign')
+    const {insertDocument} = useInsertDocument<campaignCreate>('campaign')
 
     useEffect(() => {
         if(documents){
@@ -47,7 +49,28 @@ function CreateCampain() {
             setErrors('Selecione um sistema')
             return
         }
+        
+        try{
+             const selectedRule = campaing.find((camp: RPGSystem) => camp.id === selectedSys);
 
+            const data = {
+                name: campaignName,
+                description,
+                system: selectedRule?.name ?? '',
+                rulesId: selectedSys,
+                masterName: user!.displayName,
+                masterId: user!.uid
+            }
+
+            const res = await insertDocument(data)
+
+            if(res){
+                navigate('/dashboard')
+            }
+        } catch(error: any) {
+            console.error(error)
+            setErrors(error)
+        }
     }
 
   return (
