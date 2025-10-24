@@ -9,11 +9,16 @@ export interface campaignCreate {
     masterName: string | null,
     rulesId: string
     createdAt?: Timestamp
+    players?: Player[]
+}
+
+export interface Player {
+    id: string;
+    name: string;
+    character?: string;
 }
 
 export interface Campaign extends campaignCreate {
     id: string
-    players: string[]
     invitedPlayers: string[]
-    isActive: boolean
 }

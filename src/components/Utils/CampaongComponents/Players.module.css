@@ -1,0 +1,94 @@
+.formContainer{
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 28px;
+    box-shadow: 0 0 15px #00000025;
+}
+
+.playerContainer{
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 20px;
+    margin-top: 28px;
+    box-shadow: 0 0 15px #00000025;
+    margin-bottom: 80px;
+}
+
+.title{
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.6em;
+}
+
+.player{
+    border: 1px solid var(--Primary);
+    border-radius: 10px;
+    padding: 8px 10px;
+    margin-top: 10px;
+    & h3{
+        font-weight: 500;
+    }
+    & p{
+        font-weight: 400;
+        color: var(--gray);
+    }
+}
+
+.label{
+    font-size: 1em;
+    font-weight: 500;
+    margin-top: 40px;
+}
+.diceContainer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+.diceBtn{
+    padding: 12px 20px;
+    font-size: 1em;
+    font-weight: 600;
+    border-radius: 10px;
+    color: var(--white);
+    background: linear-gradient(75deg, var(--Primary), var(--secondary));
+    transition: all .3s ease;
+}
+.diceBtn:hover{
+    outline: 2px solid var(--Primary);
+    outline-offset: 2px;
+}
+.result{
+    text-align: center;
+    font-weight: 400;
+    color: var(--gray);
+    border: 1px solid var(--Primary);
+    box-shadow: inset 2px 1px 15px #00000025;
+    border-radius: 15px;
+    height: 90px;
+    width: 90px;
+    margin: 40px auto 0px;
+}
+
+.value{
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #000;
+}
+
+.history{
+    padding: 0 20px;
+    & ul{
+        margin-top: 20px;
+        list-style: none;
+        & li{
+            text-align: center;
+        }
+    }
+}

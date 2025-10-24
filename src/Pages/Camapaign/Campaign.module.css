@@ -7,44 +7,7 @@
     padding: 10px 20px;
 }
 
-.formContainer{
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-top: 28px;
-    box-shadow: 0 0 15px #00000025;
-}
 
-.playerContainer{
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 20px;
-    margin-top: 28px;
-    box-shadow: 0 0 15px #00000025;
-}
-
-.title{
-    text-align: center;
-    font-weight: 700;
-    font-size: 1.6em;
-}
-
-.player{
-    border: 1px solid var(--Primary);
-    border-radius: 10px;
-    padding: 8px 10px;
-    margin-top: 10px;
-    & h3{
-        font-weight: 500;
-    }
-    & p{
-        font-weight: 400;
-        color: var(--gray);
-    }
-}
 
 .navbar {
     position: fixed;
@@ -67,4 +30,10 @@
     cursor: pointer;
     font-size: 0.8rem;
     color: var(--gray);
+}
+
+.playerList{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }

@@ -59,7 +59,8 @@ function CreateCampain() {
                 system: selectedRule?.name ?? '',
                 rulesId: selectedSys,
                 masterName: user!.displayName,
-                masterId: user!.uid
+                masterId: user!.uid,
+                players: []
             }
 
             const res = await insertDocument(data)

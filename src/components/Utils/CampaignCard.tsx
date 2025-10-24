@@ -1,4 +1,4 @@
-import styles from "./CampaignCard.module.css";
+ import styles from "./CampaignCard.module.css";
 import { type campaignCreate } from "../../types/campaign";
 import Button from "./Button";
 import { useNavigate } from "react-router-dom";
